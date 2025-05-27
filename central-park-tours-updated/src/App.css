@@ -1,0 +1,509 @@
+/* Custom color palette */
+:root {
+  --hudson-mist: #E9EFF2;     /* Primary background color - soft, airy blue-gray */
+  --sage-green: #B5C9B7;      /* Primary brand color - soft, natural sage green (replacing pink) */
+  --greenwich-leaf: #6E8B6F;  /* Accent green - muted, natural green */
+  --taxi-gold: #F4C542;       /* Highlight yellow - playful, polished yellow */
+  --skyline-charcoal: #2E2E2E; /* Text/contrast color - deep gray-black */
+  --uptown-rosewood: #4A2E2A; /* Elegant accent color - deep reddish brown */
+  
+  /* Derived colors for UI elements */
+  --primary: var(--sage-green);
+  --secondary: var(--greenwich-leaf);
+  --accent: var(--taxi-gold);
+  --elegant: var(--uptown-rosewood);
+  --background: var(--hudson-mist);
+  --text: var(--skyline-charcoal);
+  
+  /* Additional UI colors */
+  --light-bg: #FFFFFF;
+  --light-text: #FFFFFF;
+  --dark-overlay: rgba(46, 46, 46, 0.7);
+  --light-overlay: rgba(233, 239, 242, 0.9);
+}
+
+/* Base styles */
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: 'Poppins', 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text);
+}
+
+/* Button styles */
+.btn {
+  transition: all 0.3s ease;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: var(--text);
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--elegant);
+  color: var(--light-text);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  color: var(--light-text);
+  border: none;
+}
+
+.btn-secondary:hover {
+  background-color: var(--elegant);
+  transform: translateY(-2px);
+}
+
+/* Section styles */
+.section-title {
+  position: relative;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--accent);
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  color: var(--text);
+  opacity: 0.8;
+}
+
+/* Background colors for sections */
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+}
+
+.bg-light {
+  background-color: var(--light-bg);
+}
+
+.bg-dark {
+  background-color: var(--elegant);
+  color: var(--light-text);
+}
+
+.bg-accent {
+  background-color: var(--accent);
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: var(--background);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.nav-link {
+  color: var(--text);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover, 
+.nav-link.active {
+  color: var(--accent);
+}
+
+/* Card styles */
+.card {
+  background-color: var(--light-bg);
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styles */
+input, textarea, select {
+  background-color: var(--light-bg);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 10px 15px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  color: var(--text);
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(244, 197, 66, 0.2);
+  outline: none;
+}
+
+/* Booking form styles */
+.booking-form {
+  background-color: var(--light-bg);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form h2 {
+  color: var(--text);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.booking-form label {
+  color: var(--text);
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.booking-form select,
+.booking-form input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  background-color: var(--light-bg);
+  color: var(--text);
+}
+
+.booking-form .form-icon {
+  color: var(--secondary);
+  margin-right: 10px;
+}
+
+.booking-form .btn-book {
+  background-color: var(--accent);
+  color: var(--text);
+  font-weight: 600;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.booking-form .btn-book:hover {
+  background-color: var(--elegant);
+  color: var(--light-text);
+  transform: translateY(-2px);
+}
+
+/* Footer styles */
+footer {
+  background-color: var(--text);
+  color: var(--light-text);
+}
+
+footer a {
+  color: var(--accent);
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--primary);
+}
+
+/* Animation styles */
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Parallax effect */
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Gallery styles */
+.gallery-carousel .carousel-root {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-carousel .control-arrow {
+  background-color: var(--accent) !important;
+  opacity: 0.8 !important;
+  height: 60px !important;
+  width: 60px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.gallery-carousel .control-prev {
+  left: 20px !important;
+}
+
+.gallery-carousel .control-next {
+  right: 20px !important;
+}
+
+.gallery-carousel .control-arrow:hover {
+  opacity: 1 !important;
+}
+
+/* Custom gallery grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+  margin-top: 30px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  aspect-ratio: 4/3;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--dark-overlay);
+  color: var(--light-text);
+  padding: 15px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-caption {
+  transform: translateY(0);
+}
+
+/* Tour card styles */
+.tour-card {
+  background-color: var(--light-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tour-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.tour-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.tour-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.tour-card:hover .tour-image img {
+  transform: scale(1.05);
+}
+
+.tour-content {
+  padding: 20px;
+}
+
+.tour-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+.tour-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 15px;
+}
+
+.tour-description {
+  color: var(--text);
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+.tour-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tour-feature {
+  background-color: var(--primary);
+  color: var(--text);
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Testimonial styles */
+.testimonial-card {
+  background-color: var(--light-bg);
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 5rem;
+  color: var(--primary);
+  opacity: 0.3;
+  font-family: Georgia, serif;
+}
+
+.testimonial-text {
+  font-style: italic;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-author-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 15px;
+}
+
+.testimonial-author-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonial-author-name {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.testimonial-author-title {
+  font-size: 0.8rem;
+  color: var(--text);
+  opacity: 0.7;
+}
+
+/* Utility classes */
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.text-secondary {
+  color: var(--secondary) !important;
+}
+
+.text-accent {
+  color: var(--accent) !important;
+}
+
+.text-elegant {
+  color: var(--elegant) !important;
+}
+
+.bg-light-beige {
+  background-color: var(--primary);
+  /* Removed opacity: 0.3 which was causing translucency */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
